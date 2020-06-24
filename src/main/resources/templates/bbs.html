@@ -11,7 +11,14 @@
 <br> 
 <button>記事投稿</button>
 </form>
+
+<div th:each="article:${articleList}">
 <hr>
+投稿者名：<span th:text="${article.name}" >dummy</span><br>
+投稿内容：<br>
+<span th:text="${article.contents}">dummy</span>
+<hr>
+</div>
 
 </body>
 </html>
