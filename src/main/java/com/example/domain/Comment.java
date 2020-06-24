@@ -13,13 +13,13 @@ public class Comment {
 	/**	コメント者名 */
 	private String name;
 	/**	コメント内容 */
-	private String contents;
+	private String content;
 	/**	記事ID */
 	private Integer articleId;
 	
 	@Override
 	public String toString() {
-		return "Comment [id=" + id + ", name=" + name + ", contents=" + contents + ", articleId=" + articleId + "]";
+		return "Comment [id=" + id + ", name=" + name + ", content=" + content + ", articleId=" + articleId + "]";
 	}
 	public Integer getId() {
 		return id;
@@ -33,11 +33,11 @@ public class Comment {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getContents() {
-		return contents;
+	public String getContent() {
+		return content;
 	}
-	public void setContents(String contents) {
-		this.contents = contents;
+	public void setContent(String content) {
+		this.content = content;
 	}
 	public Integer getArticleId() {
 		return articleId;

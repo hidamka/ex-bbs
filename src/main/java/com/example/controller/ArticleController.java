@@ -25,18 +25,19 @@ public class ArticleController {
 	}
 
 	@RequestMapping("")
-	public String index() {
+	public String index(Model model) {
+		List<Article> articleList = repository.findAll();
+		model.addAttribute("articleList", articleList);
 		return "bbs";
 	}
 
 	@RequestMapping("/insertArticle")
-	public String insertArticle(ArticleForm form, Model model) {
+	public String insertArticle(ArticleForm form) {
 		Article article = new Article();
 		article.setName(form.getName());
 		article.setContent(form.getContents());
 		repository.insert(article);
-		List<Article> articleList = repository.findAll();
-		model.addAttribute("articleList", articleList);
+		
 		return "bbs";
 	}
 
