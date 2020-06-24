@@ -17,7 +17,12 @@
 投稿者名：<span th:text="${article.name}" >dummy</span><br>
 投稿内容：<br>
 <pre th:text="${article.content}">dummy</pre>
+<div th:each="comment:${article.commentList}">
+コメント者名：<span th:text="${comment.name}">dummy</span><br>
+コメント内容：<br>
+<pre th:text="${comment.content}">dummy</pre><br>
 </div>
-
+<
+</div>
 </body>
 </html>
