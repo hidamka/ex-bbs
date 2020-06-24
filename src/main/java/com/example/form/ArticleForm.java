@@ -11,11 +11,11 @@ public class ArticleForm {
 	/**	投稿者名 */
 	private String name;
 	/**	投稿内容 */
-	private String contents;
+	private String content;
 	
 	@Override
 	public String toString() {
-		return "ArticleForm [name=" + name + ", contents=" + contents + "]";
+		return "ArticleForm [name=" + name + ", content=" + content + "]";
 	}
 	public String getName() {
 		return name;
@@ -23,11 +23,11 @@ public class ArticleForm {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getContents() {
-		return contents;
+	public String getContent() {
+		return content;
 	}
-	public void setContents(String contents) {
-		this.contents = contents;
+	public void setContent(String content) {
+		this.content = content;
 	}
 	
 	
