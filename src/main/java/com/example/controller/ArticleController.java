@@ -79,7 +79,7 @@ public class ArticleController {
 	}
 
 	/**
-	 * フォームクラスから新規記事情報を受け取ってテーブルに格納.
+	 * フォームクラスから新規コメント情報を受け取ってテーブルに格納.
 	 * 
 	 * @param form　コメントフォーム
 	 * @return　掲示板画面にフォワード
@@ -88,8 +88,23 @@ public class ArticleController {
 	public String insertComment(CommentForm form) {
 		Comment comment = new Comment();
 		BeanUtils.copyProperties(form, comment);
+		comment.setArticleId(Integer.parseInt(form.getArticleId()));
 		commentRepository.insert(comment);
 
+		return "redirect:/article";
+	}
+	
+	/**
+	 * 記事IDを受け取って該当記事とコメントを削除.
+	 * 
+	 * @param articleId 記事ID
+	 * @return　掲示板画面にフォワード
+	 */
+	@RequestMapping("/delete")
+	public String delete(String articleId) {
+		commentRepository.deleteByArticleId(Integer.parseInt(articleId));
+		articleRepository.deleteById(Integer.parseInt(articleId));
+		
 		return "redirect:/article";
 	}
 
